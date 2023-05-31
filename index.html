@@ -8,5 +8,49 @@
   </head>
   <body>
     <h1>Hello</h1>
+    <button id="myButton">Alert Text</button>
+    <ul class="myList">
+      <li>test list items; hello world 123</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world 456</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world</li>
+    </ul>
+    <button id="animate">Animate the Box!</button>
+    <div
+      id="myBox"
+      style="
+        background: green;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        margin-top: 15px;
+      "
+    ></div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#myButton").on("click", function () {
+          alert("Hello Everyone!!");
+          $("h1").css("color", "red");
+        });
+
+        $(".myList li").each(function (index) {
+          console.log(index + ": " + $(this).text());
+        });
+
+        $("#animate").on("click", function () {
+          $("#myBox").animate({ left: "700px" }, "slow", function () {
+            alert("Complete!");
+          });
+        });
+      });
+    </script>
   </body>
 </html>
